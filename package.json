@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/sumanjs/suman-events/issues"
   },
-  "homepage": "https://github.com/sumanjs/suman-events#readme"
+  "homepage": "https://github.com/sumanjs/suman-events#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
 }
