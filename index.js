@@ -13,6 +13,22 @@ function makeToString (val) {
   }
 }
 
+
+/*
+
+ Readme: These events always pertain. If we use tap, we still go through these events.
+
+ With the example of TAP in mind - tap output would get parsed, it would trigger one of these events,
+ then the events would trigger the tap reporter (or non-tap reporter).
+
+ So it could go:
+
+ tap output from child process => suman-events => tap-output
+ -or-
+ tap output from child process => suman-events => suman std output
+
+*/
+
 const events = module.exports = Object.freeze({
 
   // runner events
@@ -91,7 +107,6 @@ const events = module.exports = Object.freeze({
     toString: makeToString('RUNNER_ASCII_LOGO')
   },
 
-
   // perennial events
   USING_SERVER_MARKED_BY_HOSTNAME: {
     explanation: 'Using server marked by hostname, matched with a property on your "servers" property in your config.',
@@ -108,18 +123,28 @@ const events = module.exports = Object.freeze({
   },
 
   TEST_CASE_STUBBED: {
-    explanation: 'runner is started, fires before any test child processes are started.',
+    explanation: 'Test case is stubbed.',
     toString: makeToString('TEST_CASE_STUBBED')
   },
 
   TEST_CASE_SKIPPED: {
-    explanation: 'runner is started, fires before any test child processes are started.',
+    explanation: 'Test case is skipped.',
     toString: makeToString('TEST_CASE_SKIPPED')
   },
 
   TEST_CASE_PASS: {
-    explanation: 'runner is started, fires before any test child processes are started.',
+    explanation: 'Test case has passed successfully.',
     toString: makeToString('TEST_CASE_PASS')
+  },
+
+  TEST_CASE_FAIL: {
+    explanation: 'Test case has failed.',
+    toString: makeToString('TEST_CASE_FAIL')
+  },
+
+  TEST_CASE_END: {
+    explanation: 'Test case has ended (use TEST_CASE_PASS, TEST_CASE_STUBBED, etc, for specific status).',
+    toString: makeToString('TEST_CASE_END')
   },
 
   FILENAME_DOES_NOT_MATCH_NONE: {
@@ -152,9 +177,9 @@ const events = module.exports = Object.freeze({
     toString: makeToString('TEST_END')
   },
 
-  TEST_CASE_FAIL: {
-    explanation: 'runner is started, fires before any test child processes are started.',
-    toString: makeToString('TEST_CASE_FAIL')
+  TAP_COMPLETE: {
+    explanation: 'TAP output is complete',
+    toString: makeToString('TAP_COMPLETE')
   },
 
   FILE_IS_NOT_DOT_JS: {
@@ -170,10 +195,24 @@ const events = module.exports = Object.freeze({
   USING_STANDARD_REPORTER: {
     explanation: 'runner is started, fires before any test child processes are started.',
     toString: makeToString('USING_STANDARD_REPORTER')
+  },
+
+  ERRORS_ONLY_OPTION:{
+    explanation: 'Errors-only option is set to true.',
+    toString: makeToString('ERRORS_ONLY_OPTION')
+  },
+
+  SUMAN_VERSION:{
+    explanation: 'The Suman version which is actually running on your system.',
+    toString: makeToString('SUMAN_VERSION')
+  },
+
+  NODE_VERSION:{
+    explanation: 'The Node.js version running in your environment.',
+    toString: makeToString('NODE_VERSION')
   }
 
 });
-
 
 
 // validate all of the above
@@ -181,7 +220,7 @@ Object.keys(events).forEach(function (k) {
 
   const ev = events[ k ];
   const toStr = String(ev);
-  assert(ev.explanation.length > 50, colors.red(' => Please provide a more detailed explanation for the event.'));
+  assert(ev.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 
   if (toStr !== k) {
     throw new Error(colors.red(' => Suman implementation error => toString() on events object is' +
