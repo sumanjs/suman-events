@@ -27,5 +27,8 @@
   "homepage": "https://github.com/sumanjs/suman-events#readme",
   "dependencies": {
     "colors": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.5"
   }
 }

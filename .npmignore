@@ -1,0 +1,8 @@
+.idea
+node_modules
+tsconfig*.json
+*.md
+*.sh
+*.log
+*.txt
+test
