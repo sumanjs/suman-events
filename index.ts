@@ -7,11 +7,16 @@ import assert = require('assert');
 const colors = require('colors/safe');
 
 
-function makeToString (val: string) {
+//////////////////////////////////////////
+
+
+function makeToString(val: string) {
   return function () {
     return val;
   }
 }
+
+
 
 
 /*
@@ -27,12 +32,12 @@ function makeToString (val: string) {
  -or-
  tap output from child process => suman-events => suman std output
 
-*/
+ */
 
-const events : ISumanEvents = Object.freeze({
+const events: ISumanEvents = Object.freeze({
 
   // runner events
-  TEST_FILE_CHILD_PROCESS_EXITED:  {
+  TEST_FILE_CHILD_PROCESS_EXITED: {
     explanation: 'runner is started, fires before any test child processes are started.',
     toString: makeToString('TEST_FILE_CHILD_PROCESS_EXITED')
   } as ISumanEvent,
@@ -197,17 +202,17 @@ const events : ISumanEvents = Object.freeze({
     toString: makeToString('USING_STANDARD_REPORTER')
   } as ISumanEvent,
 
-  ERRORS_ONLY_OPTION:{
+  ERRORS_ONLY_OPTION: {
     explanation: 'Errors-only option is set to true.',
     toString: makeToString('ERRORS_ONLY_OPTION')
   } as ISumanEvent,
 
-  SUMAN_VERSION:{
+  SUMAN_VERSION: {
     explanation: 'The Suman version which is actually running on your system.',
     toString: makeToString('SUMAN_VERSION')
   } as ISumanEvent,
 
-  NODE_VERSION:{
+  NODE_VERSION: {
     explanation: 'The Node.js version running in your environment.',
     toString: makeToString('NODE_VERSION')
   } as ISumanEvent
@@ -218,7 +223,7 @@ const events : ISumanEvents = Object.freeze({
 // validate all of the above
 Object.keys(events).forEach(function (k: string) {
 
-  const ev : ISumanEvent = events[ k ];
+  const ev: ISumanEvent = events[k];
   const toStr = String(ev);
   assert(ev.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 

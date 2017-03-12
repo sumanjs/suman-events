@@ -1,10 +1,7 @@
-
-
-
 type TSumanToString = () => string;
 
 
-interface ISumanEvent {
+interface ISumanEvent extends String {
   explanation: string,
   toString: TSumanToString
 }
@@ -12,7 +9,7 @@ interface ISumanEvent {
 
 interface ISumanEvents {
 
-  TEST_FILE_CHILD_PROCESS_EXITED:  ISumanEvent,
+  TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent,
   RUNNER_EXIT_CODE: ISumanEvent,
   RUNNER_EXIT_SIGNAL: ISumanEvent,
   RUNNER_HIT_DIRECTORY_BUT_NOT_RECURSIVE: ISumanEvent;
@@ -44,9 +41,9 @@ interface ISumanEvents {
   TAP_COMPLETE: ISumanEvent,
   FILE_IS_NOT_DOT_JS: ISumanEvent,
   FATAL_TEST_ERROR: ISumanEvent,
-  USING_STANDARD_REPORTER:ISumanEvent,
-  ERRORS_ONLY_OPTION:ISumanEvent,
-  SUMAN_VERSION:ISumanEvent,
-  NODE_VERSION:ISumanEvent
+  USING_STANDARD_REPORTER: ISumanEvent,
+  ERRORS_ONLY_OPTION: ISumanEvent,
+  SUMAN_VERSION: ISumanEvent,
+  NODE_VERSION: ISumanEvent
 
 }
