@@ -6,17 +6,13 @@ import assert = require('assert');
 //npm
 const colors = require('colors/safe');
 
-
 //////////////////////////////////////////
-
 
 function makeToString(val: string) {
   return function () {
     return val;
   }
 }
-
-
 
 
 /*
@@ -198,8 +194,13 @@ const events: ISumanEvents = Object.freeze({
   } as ISumanEvent,
 
   USING_STANDARD_REPORTER: {
-    explanation: 'runner is started, fires before any test child processes are started.',
+    explanation: 'A notification that suman is using the standard reporter.',
     toString: makeToString('USING_STANDARD_REPORTER')
+  } as ISumanEvent,
+
+  USING_SQLITE_REPORTER: {
+    explanation: 'A notification that suman is using the SQLite reporter.',
+    toString: makeToString('USING_SQLITE_REPORTER')
   } as ISumanEvent,
 
   ERRORS_ONLY_OPTION: {
