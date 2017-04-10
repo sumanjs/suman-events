@@ -8,7 +8,7 @@ function makeToString(val) {
         return val;
     };
 }
-var events = Object.freeze({
+var ev = Object.freeze({
     TEST_FILE_CHILD_PROCESS_EXITED: {
         explanation: 'runner is started, fires before any test child processes are started.',
         toString: makeToString('TEST_FILE_CHILD_PROCESS_EXITED')
@@ -158,8 +158,8 @@ var events = Object.freeze({
         toString: makeToString('NODE_VERSION')
     }
 });
-Object.keys(events).forEach(function (k) {
-    var ev = events[k];
+Object.keys(ev).forEach(function (k) {
+    var ev = ev[k];
     var toStr = String(ev);
     assert(ev.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
     if (toStr !== k) {
@@ -167,4 +167,4 @@ Object.keys(events).forEach(function (k) {
             ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));
     }
 });
-module.exports = events;
+module.exports = ev;
