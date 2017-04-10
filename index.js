@@ -1,4 +1,6 @@
 'use strict';
+var process = require('suman-browser-polyfills/modules/process');
+var global = require('suman-browser-polyfills/modules/global');
 var assert = require("assert");
 var colors = require('colors/safe');
 function makeToString(val) {
@@ -136,8 +138,12 @@ var events = Object.freeze({
         toString: makeToString('FATAL_TEST_ERROR')
     },
     USING_STANDARD_REPORTER: {
-        explanation: 'runner is started, fires before any test child processes are started.',
+        explanation: 'A notification that suman is using the standard reporter.',
         toString: makeToString('USING_STANDARD_REPORTER')
+    },
+    USING_SQLITE_REPORTER: {
+        explanation: 'A notification that suman is using the SQLite reporter.',
+        toString: makeToString('USING_SQLITE_REPORTER')
     },
     ERRORS_ONLY_OPTION: {
         explanation: 'Errors-only option is set to true.',
