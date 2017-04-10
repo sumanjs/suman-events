@@ -1,6 +1,6 @@
 {
   "name": "suman-events",
-  "version": "0.0.105",
+  "version": "0.0.106",
   "description": "Shared module in Suman ecosystem",
   "main": "index.js",
   "typings": "dts/all.d.ts",
