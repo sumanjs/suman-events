@@ -159,9 +159,9 @@ var ev = Object.freeze({
     }
 });
 Object.keys(ev).forEach(function (k) {
-    var ev = ev[k];
-    var toStr = String(ev);
-    assert(ev.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
+    var e = ev[k];
+    var toStr = String(e);
+    assert(e.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
     if (toStr !== k) {
         throw new Error(colors.red(' => Suman implementation error => toString() on events object is' +
             ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));

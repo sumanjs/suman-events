@@ -23,6 +23,7 @@ namespace ev {
 
   export interface ISumanEvents {
 
+    [key: string]: any;
     TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent,
     RUNNER_EXIT_CODE: ISumanEvent,
     RUNNER_EXIT_SIGNAL: ISumanEvent,
@@ -282,9 +283,9 @@ let ev: ev.ISumanEvents = Object.freeze({
 // validate all of the above
 Object.keys(ev).forEach(function (k: string) {
 
-  const ev: ev.ISumanEvent = ev[k];
-  const toStr = String(ev);
-  assert(ev.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
+  const e: ev.ISumanEvent = ev[k];
+  const toStr = String(e);
+  assert(e.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 
   if (toStr !== k) {
     throw new Error(colors.red(' => Suman implementation error => toString() on events object is' +

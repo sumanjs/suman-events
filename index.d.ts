@@ -5,6 +5,7 @@ declare namespace ev {
         toString: TSumanToString;
     }
     interface ISumanEvents {
+        [key: string]: any;
         TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent;
         RUNNER_EXIT_CODE: ISumanEvent;
         RUNNER_EXIT_SIGNAL: ISumanEvent;
