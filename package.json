@@ -31,10 +31,6 @@
     "suman-browser-polyfills": "0.0.1002"
   },
   "devDependencies": {
-    "@types/node": "^7.0.5",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
-    "babel-preset-latest": "^6.24.1",
-    "transform-runtime": "0.0.0"
+    "@types/node": "^7.0.5"
   }
 }
