@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 var process = require('suman-browser-polyfills/modules/process');
 var global = require('suman-browser-polyfills/modules/global');
 var assert = require("assert");
@@ -167,4 +168,4 @@ Object.keys(ev).forEach(function (k) {
             ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));
     }
 });
-module.exports = ev;
+exports.default = ev;
