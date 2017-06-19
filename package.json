@@ -1,6 +1,6 @@
 {
   "name": "suman-events",
-  "version": "0.0.107",
+  "version": "0.0.108",
   "description": "Shared event identities module in Suman ecosystem",
   "main": "index.js",
   "typings": "index.d.ts",
