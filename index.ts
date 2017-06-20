@@ -86,7 +86,7 @@ function makeToString(val: string) {
 
  */
 
-let ev : ISumanEvents = Object.freeze({
+let events: ISumanEvents = Object.freeze({
 
   // runner events
   TEST_FILE_CHILD_PROCESS_EXITED: {
@@ -278,9 +278,9 @@ let ev : ISumanEvents = Object.freeze({
 
 
 // validate all of the above
-Object.keys(ev).forEach(function (k: string) {
+Object.keys(events).forEach(function (k: string) {
 
-  const e: ISumanEvent = ev[k];
+  const e: ISumanEvent = events[k];
   const toStr = String(e);
   assert(e.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 
@@ -291,4 +291,4 @@ Object.keys(ev).forEach(function (k: string) {
 });
 
 
-export default ev;
+export {events};

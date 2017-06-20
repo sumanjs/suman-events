@@ -42,5 +42,5 @@ export interface ISumanEvents {
     SUMAN_VERSION: ISumanEvent;
     NODE_VERSION: ISumanEvent;
 }
-declare let ev: ISumanEvents;
-export default ev;
+declare let events: ISumanEvents;
+export { events };
