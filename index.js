@@ -34,6 +34,10 @@ var events = Object.freeze({
         explanation: 'runner is started, fires before any test child processes are started.',
         toString: makeToString('RUNNER_TEST_PATHS_CONFIRMATION')
     },
+    STANDARD_TABLE: {
+        explanation: 'this is the standard table that is outputted for a single node process.',
+        toString: makeToString('STANDARD_TABLE')
+    },
     RUNNER_RESULTS_TABLE: {
         explanation: 'runner is started, fires before any test child processes are started.',
         toString: makeToString('RUNNER_RESULTS_TABLE')
