@@ -42,5 +42,4 @@ export interface ISumanEvents {
     SUMAN_VERSION: ISumanEvent;
     NODE_VERSION: ISumanEvent;
 }
-declare let events: ISumanEvents;
-export { events };
+export declare const events: ISumanEvents;
