@@ -20,9 +20,12 @@ export interface ISumanEvent {
   toString: TSumanToString
 }
 
+// export interface ISumanEvents{
+//   [key: string]: ISumanEvent
+// }
+
 export interface ISumanEvents {
 
-  [key: string]: ISumanEvent,
   TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent,
   RUNNER_EXIT_CODE: ISumanEvent,
   RUNNER_EXIT_SIGNAL: ISumanEvent,
@@ -58,10 +61,12 @@ export interface ISumanEvents {
   USING_STANDARD_REPORTER: ISumanEvent,
   ERRORS_ONLY_OPTION: ISumanEvent,
   SUMAN_VERSION: ISumanEvent,
-  NODE_VERSION: ISumanEvent
+  NODE_VERSION: ISumanEvent,
+  META_TEST_ENDED: ISumanEvent
 
 }
 
+//
 
 ////////////////////////////////////////////////////////////////
 
@@ -85,6 +90,11 @@ function makeToString(val: string) {
  tap output from child process => suman-events => suman std output
 
  */
+
+
+// export enum ISumanEventz {
+//   age,
+// }
 
 let $events: ISumanEvents = Object.freeze({
 

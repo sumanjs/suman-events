@@ -1,1 +1,3 @@
-http://stackoverflow.com/questions/42740581/typescript-warning-ts7017-index-signature-of-object-type-implicitly-has-any
+
+
+use enum instead of an duplicate interface?
