@@ -4,6 +4,10 @@ export interface ISumanEvent {
     toString: TSumanToString;
 }
 export interface ISumanEvents {
+    [key: string]: ISumanEvent;
+}
+export interface ISumanEvents {
+    STANDARD_TABLE: ISumanEvent;
     TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent;
     RUNNER_EXIT_CODE: ISumanEvent;
     RUNNER_EXIT_SIGNAL: ISumanEvent;
