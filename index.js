@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var process = require('suman-browser-polyfills/modules/process');
 var global = require('suman-browser-polyfills/modules/global');
 var assert = require("assert");
-var colors = require('colors/safe');
+var chalk = require("chalk");
 function makeToString(val) {
     return function () {
         return val;
@@ -170,9 +170,9 @@ var $events = Object.freeze({
 Object.keys($events).forEach(function (k) {
     var e = $events[k];
     var toStr = String(e);
-    assert(e.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
+    assert(e.explanation.length > 20, chalk.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
     if (toStr !== k) {
-        throw new Error(colors.red(' => Suman implementation error => toString() on events object is' +
+        throw new Error(chalk.red(' => Suman implementation error => toString() on events object is' +
             ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));
     }
 });

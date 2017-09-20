@@ -8,7 +8,7 @@ const global = require('suman-browser-polyfills/modules/global');
 import assert = require('assert');
 
 //npm
-const colors = require('colors/safe');
+import chalk = require('chalk');
 
 ////////////////////////////////////////////////////////////
 
@@ -66,8 +66,6 @@ export interface ISumanEvents {
 
 }
 
-//
-
 ////////////////////////////////////////////////////////////////
 
 function makeToString(val: string) {
@@ -76,24 +74,6 @@ function makeToString(val: string) {
   }
 }
 
-/*
-
- Readme: These events always pertain. If we use TAP, we still go through these events.
-
- With the example of TAP in mind - tap output would get parsed, it would trigger one of these events,
- then the events would trigger the tap reporter (or non-tap reporter).
-
- So it could go:
-
- tap output from child process => suman-events => tap-output
- -or-
- tap output from child process => suman-events => suman std output
-
- */
-
-// export enum ISumanEventz {
-//   age,
-// }
 
 let $events: ISumanEvents = Object.freeze({
 
@@ -300,10 +280,10 @@ Object.keys($events).forEach(function (k: string) {
 
   const e: ISumanEvent = $events[k];
   const toStr = String(e);
-  assert(e.explanation.length > 20, colors.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
+  assert(e.explanation.length > 20, chalk.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 
   if (toStr !== k) {
-    throw new Error(colors.red(' => Suman implementation error => toString() on events object is' +
+    throw new Error(chalk.red(' => Suman implementation error => toString() on events object is' +
       ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));
   }
 });
