@@ -5,6 +5,9 @@ export interface ISumanEvent {
 }
 export interface ISumanEvents {
     [key: string]: ISumanEvent;
+}
+export interface ISumanEvents {
+    STANDARD_TABLE: ISumanEvent;
     TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent;
     RUNNER_EXIT_CODE: ISumanEvent;
     RUNNER_EXIT_SIGNAL: ISumanEvent;
@@ -41,5 +44,6 @@ export interface ISumanEvents {
     ERRORS_ONLY_OPTION: ISumanEvent;
     SUMAN_VERSION: ISumanEvent;
     NODE_VERSION: ISumanEvent;
+    META_TEST_ENDED: ISumanEvent;
 }
 export declare const events: ISumanEvents;

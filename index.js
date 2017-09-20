@@ -161,7 +161,11 @@ var $events = Object.freeze({
     NODE_VERSION: {
         explanation: 'The Node.js version running in your environment.',
         toString: makeToString('NODE_VERSION')
-    }
+    },
+    META_TEST_ENDED: {
+        explanation: 'An event that respresents the very end of a test, for testing Suman itself.',
+        toString: makeToString('META_TEST_ENDED')
+    },
 });
 Object.keys($events).forEach(function (k) {
     var e = $events[k];

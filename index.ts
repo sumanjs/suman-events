@@ -12,7 +12,6 @@ const colors = require('colors/safe');
 
 ////////////////////////////////////////////////////////////
 
-
 export type TSumanToString = () => string;
 
 export interface ISumanEvent {
@@ -21,8 +20,12 @@ export interface ISumanEvent {
 }
 
 export interface ISumanEvents {
+  [key: string]: ISumanEvent
+}
 
-  [key: string]: ISumanEvent,
+export interface ISumanEvents {
+
+  STANDARD_TABLE: ISumanEvent,
   TEST_FILE_CHILD_PROCESS_EXITED: ISumanEvent,
   RUNNER_EXIT_CODE: ISumanEvent,
   RUNNER_EXIT_SIGNAL: ISumanEvent,
@@ -58,10 +61,12 @@ export interface ISumanEvents {
   USING_STANDARD_REPORTER: ISumanEvent,
   ERRORS_ONLY_OPTION: ISumanEvent,
   SUMAN_VERSION: ISumanEvent,
-  NODE_VERSION: ISumanEvent
+  NODE_VERSION: ISumanEvent,
+  META_TEST_ENDED: ISumanEvent
 
 }
 
+//
 
 ////////////////////////////////////////////////////////////////
 
@@ -85,6 +90,10 @@ function makeToString(val: string) {
  tap output from child process => suman-events => suman std output
 
  */
+
+// export enum ISumanEventz {
+//   age,
+// }
 
 let $events: ISumanEvents = Object.freeze({
 
@@ -277,10 +286,14 @@ let $events: ISumanEvents = Object.freeze({
   NODE_VERSION: {
     explanation: 'The Node.js version running in your environment.',
     toString: makeToString('NODE_VERSION')
-  }
+  },
+
+  META_TEST_ENDED: {
+    explanation: 'An event that respresents the very end of a test, for testing Suman itself.',
+    toString: makeToString('META_TEST_ENDED')
+  },
 
 });
-
 
 // validate all of the above
 Object.keys($events).forEach(function (k: string) {
@@ -294,6 +307,5 @@ Object.keys($events).forEach(function (k: string) {
       ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));
   }
 });
-
 
 export const events = $events;

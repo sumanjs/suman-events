@@ -1,9 +1,13 @@
 .idea
 node_modules
-tsconfig*.json
+.babelrc
+.gitignore
+*.json
 *.md
 *.sh
 *.log
 *.txt
 test
 *.ts
+!*.d.ts
+
