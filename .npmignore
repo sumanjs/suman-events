@@ -1,13 +1,23 @@
+
+# directories
 .idea
 node_modules
+test
+
+# individual files
 .babelrc
 .gitignore
+.npmignore
+.editorconfig
+
+# matching files
 *.json
 *.md
 *.sh
 *.log
 *.txt
-test
 *.ts
+
+# negation
 !*.d.ts
 
