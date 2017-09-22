@@ -17,6 +17,7 @@ test
 *.log
 *.txt
 *.ts
+*.yml
 
 # negation
 !*.d.ts
