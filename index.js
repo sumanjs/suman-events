@@ -4,11 +4,11 @@ var process = require('suman-browser-polyfills/modules/process');
 var global = require('suman-browser-polyfills/modules/global');
 var assert = require("assert");
 var chalk = require("chalk");
-function makeToString(val) {
+var makeToString = function (val) {
     return function () {
         return val;
     };
-}
+};
 var $events = Object.freeze({
     TEST_FILE_CHILD_PROCESS_EXITED: {
         explanation: 'runner is started, fires before any test child processes are started.',
