@@ -9,10 +9,14 @@ var makeToString = function (val) {
         return val;
     };
 };
-var $events = Object.freeze({
+exports.events = Object.freeze({
     TEST_FILE_CHILD_PROCESS_EXITED: {
         explanation: 'runner is started, fires before any test child processes are started.',
         toString: makeToString('TEST_FILE_CHILD_PROCESS_EXITED')
+    },
+    SUMAN_CONTEXT_BLOCK: {
+        explanation: "this event is called when a Suman test block has started executing it's test cases and hooks.",
+        toString: makeToString('SUMAN_CONTEXT_BLOCK')
     },
     RUNNER_EXIT_CODE: {
         explanation: 'runner is started, fires before any test child processes are started.',
@@ -167,8 +171,8 @@ var $events = Object.freeze({
         toString: makeToString('META_TEST_ENDED')
     },
 });
-Object.keys($events).forEach(function (k) {
-    var e = $events[k];
+Object.keys(exports.events).forEach(function (k) {
+    var e = exports.events[k];
     var toStr = String(e);
     assert(e.explanation.length > 20, chalk.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
     if (toStr !== k) {
@@ -176,4 +180,3 @@ Object.keys($events).forEach(function (k) {
             ' not expected value for key => "' + k + '",\ntoString() val is => ' + toStr));
     }
 });
-exports.events = $events;

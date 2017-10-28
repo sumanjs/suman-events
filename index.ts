@@ -31,13 +31,17 @@ const makeToString = function (val: string) {
   }
 };
 
-
-const $events: ISumanEvents = Object.freeze({
+export const events: ISumanEvents = Object.freeze({
 
   // runner events
   TEST_FILE_CHILD_PROCESS_EXITED: {
     explanation: 'runner is started, fires before any test child processes are started.',
     toString: makeToString('TEST_FILE_CHILD_PROCESS_EXITED')
+  },
+
+  SUMAN_CONTEXT_BLOCK: {
+    explanation: `this event is called when a Suman test block has started executing it's test cases and hooks.`,
+    toString: makeToString('SUMAN_CONTEXT_BLOCK')
   },
 
   RUNNER_EXIT_CODE: {
@@ -233,9 +237,9 @@ const $events: ISumanEvents = Object.freeze({
 });
 
 // validate all of the above
-Object.keys($events).forEach(function (k: string) {
+Object.keys(events).forEach(function (k: string) {
 
-  const e: ISumanEvent = $events[k];
+  const e: ISumanEvent = events[k];
   const toStr = String(e);
   assert(e.explanation.length > 20, chalk.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 
@@ -245,4 +249,4 @@ Object.keys($events).forEach(function (k: string) {
   }
 });
 
-export const events = $events;
+
