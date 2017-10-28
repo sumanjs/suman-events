@@ -1,17 +1,29 @@
 {
-  "name": "suman-events",
-  "version": "0.0.115",
+  "_id": "suman-events@0.0.115",
+  "_location": "/suman-events",
+  "_phantomChildren": {
+    "async": "2.5.0"
+  },
+  "_requiredBy": [
+    "#EXISTING"
+  ],
+  "author": {
+    "name": "Olegzandr"
+  },
+  "bugs": {
+    "url": "https://github.com/sumanjs/suman-events/issues"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "suman-browser-polyfills": "latest"
+  },
   "description": "Shared event identities module in Suman ecosystem",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "typings": "index.d.ts",
-  "scripts": {
-    "test": "suman"
+  "devDependencies": {
+    "@types/chalk": "^0.4.31",
+    "@types/node": "^7.0.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sumanjs/suman-events.git"
-  },
+  "gitHead": "0af34b4c376be623790d80b4f3b52795300bba2a",
+  "homepage": "https://github.com/sumanjs/suman-events#readme",
   "keywords": [
     "Suman",
     "test",
@@ -21,18 +33,20 @@
     "mocha",
     "ava"
   ],
-  "author": "Olegzandr",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sumanjs/suman-events/issues"
+  "main": "index.js",
+  "name": "suman-events",
+  "optionalDependencies": {},
+  "readme": "# Suman-Events\n\nThis project is used to enumerate the static names of \nall the Suman events produced by the test runner and test harness.\n\nThis is a independent package so that it can be imported standalone by any given Suman reporter implementation.\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanjs/suman-events.git"
   },
-  "homepage": "https://github.com/sumanjs/suman-events#readme",
-  "dependencies": {
-    "chalk": "^2.1.0",
-    "suman-browser-polyfills": "latest"
+  "scripts": {
+    "test": "suman"
   },
-  "devDependencies": {
-    "@types/chalk": "^0.4.31",
-    "@types/node": "^7.0.5"
-  }
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
+  "version": "0.0.116"
 }
