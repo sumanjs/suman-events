@@ -1,10 +1,11 @@
 
-# directories
+### directories
 .idea
 node_modules
 test
+scripts
 
-# individual files
+### individual files
 .babelrc
 .gitignore
 .npmignore
