@@ -89,13 +89,18 @@ export const events: ISumanEvents = Object.freeze({
     toString: makeToString('RUNNER_OVERALL_RESULTS_TABLE')
   },
 
+  RUNNER_SAYS_FILE_HAS_JUST_STARTED_RUNNING: {
+    explanation: 'Runner has just launched this supposed test file as a child process.',
+    toString: makeToString('RUNNER_SAYS_FILE_HAS_JUST_STARTED_RUNNING')
+  },
+
   RUNNER_STARTED: {
-    explanation: 'runner is started, fires before any test child processes are started.',
+    explanation: 'Runner has started; this event fires before any test child processes are started.',
     toString: makeToString('RUNNER_STARTED')
   },
 
   RUNNER_ENDED: {
-    explanation: 'runner is started, fires before any test child processes are started.',
+    explanation: 'Runner has ended; this event fires after all child processes have exited.',
     toString: makeToString('RUNNER_ENDED')
   },
 

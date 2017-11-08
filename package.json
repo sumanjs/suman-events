@@ -17,7 +17,7 @@
     "chalk": "^2.1.0",
     "suman-browser-polyfills": "latest"
   },
-  "description": "Shared event identities module in Suman ecosystem",
+  "description": "Shared event names for SumanJS ecosystem",
   "devDependencies": {
     "@types/chalk": "^0.4.31",
     "@types/core-js": "^0.9.43",
@@ -26,7 +26,8 @@
   "gitHead": "0af34b4c376be623790d80b4f3b52795300bba2a",
   "homepage": "https://github.com/sumanjs/suman-events#readme",
   "keywords": [
-    "Suman",
+    "suman",
+    "sumanjs",
     "test",
     "testing",
     "bdd",
@@ -34,18 +35,17 @@
     "mocha",
     "ava"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "name": "suman-events",
   "optionalDependencies": {},
-  "readme": "# Suman-Events\n\nThis project is used to enumerate the static names of \nall the Suman events produced by the test runner and test harness.\n\nThis is a independent package so that it can be imported standalone by any given Suman reporter implementation.\n\n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sumanjs/suman-events.git"
   },
   "scripts": {
-    "test": "suman"
+    "test": "./scripts/test.sh"
   },
   "types": "index.d.ts",
   "typings": "index.d.ts",
