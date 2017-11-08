@@ -8,7 +8,7 @@
     "#EXISTING"
   ],
   "author": {
-    "name": "Olegzandr"
+    "name": "Olegzandr VD"
   },
   "bugs": {
     "url": "https://github.com/sumanjs/suman-events/issues"
@@ -20,6 +20,7 @@
   "description": "Shared event identities module in Suman ecosystem",
   "devDependencies": {
     "@types/chalk": "^0.4.31",
+    "@types/core-js": "^0.9.43",
     "@types/node": "^7.0.5"
   },
   "gitHead": "0af34b4c376be623790d80b4f3b52795300bba2a",
@@ -48,5 +49,5 @@
   },
   "types": "index.d.ts",
   "typings": "index.d.ts",
-  "version": "0.0.116"
+  "version": "0.0.117"
 }
