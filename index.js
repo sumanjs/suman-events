@@ -18,6 +18,10 @@ exports.events = Object.freeze({
         explanation: "this event is called when a Suman test block has started executing it's test cases and hooks.",
         toString: makeToString('SUMAN_CONTEXT_BLOCK')
     },
+    SUMAN_CONTEXT_BLOCK_TAP_JSON: {
+        explanation: "this event is called when a Suman test block has started executing it's test cases and hooks.",
+        toString: makeToString('SUMAN_CONTEXT_BLOCK_TAP_JSON')
+    },
     RUNNER_EXIT_CODE: {
         explanation: 'runner is started, fires before any test child processes are started.',
         toString: makeToString('RUNNER_EXIT_CODE')
@@ -113,6 +117,26 @@ exports.events = Object.freeze({
     TEST_CASE_END: {
         explanation: 'Test case has ended (use TEST_CASE_PASS, TEST_CASE_STUBBED, etc, for specific status).',
         toString: makeToString('TEST_CASE_END')
+    },
+    TEST_CASE_STUBBED_TAP_JSON: {
+        explanation: 'Test case is stubbed.',
+        toString: makeToString('TEST_CASE_STUBBED_TAP_JSON')
+    },
+    TEST_CASE_SKIPPED_TAP_JSON: {
+        explanation: 'Test case is skipped.',
+        toString: makeToString('TEST_CASE_SKIPPED_TAP_JSON')
+    },
+    TEST_CASE_PASS_TAP_JSON: {
+        explanation: 'Test case has passed successfully.',
+        toString: makeToString('TEST_CASE_PASS_TAP_JSON')
+    },
+    TEST_CASE_FAIL_TAP_JSON: {
+        explanation: 'Test case has failed.',
+        toString: makeToString('TEST_CASE_FAIL_TAP_JSON')
+    },
+    TEST_CASE_END_TAP_JSON: {
+        explanation: 'Test case has ended (use TEST_CASE_PASS, TEST_CASE_STUBBED, etc, for specific status).',
+        toString: makeToString('TEST_CASE_END_TAP_JSON')
     },
     FILENAME_DOES_NOT_MATCH_NONE: {
         explanation: 'runner is started, fires before any test child processes are started.',

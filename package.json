@@ -1,9 +1,7 @@
 {
-  "_id": "suman-events@0.0.115",
+  "_id": "suman-events@0.0.117",
   "_location": "/suman-events",
-  "_phantomChildren": {
-    "async": "2.5.0"
-  },
+  "_phantomChildren": {},
   "_requiredBy": [
     "#EXISTING"
   ],
