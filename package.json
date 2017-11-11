@@ -12,7 +12,7 @@
     "url": "https://github.com/sumanjs/suman-events/issues"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
+    "chalk": "^2.3.0",
     "suman-browser-polyfills": "latest"
   },
   "description": "Shared event names for SumanJS ecosystem",

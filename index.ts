@@ -8,7 +8,7 @@ const global = require('suman-browser-polyfills/modules/global');
 import assert = require('assert');
 
 //npm
-import chalk = require('chalk');
+import chalk from 'chalk';
 
 ////////////////////////////////////////////////////////////
 
@@ -31,7 +31,7 @@ const makeToString = function (val: string) {
   }
 };
 
-export const events: ISumanEvents = Object.freeze({
+export const events = Object.freeze({
 
   // runner events
   TEST_FILE_CHILD_PROCESS_EXITED: {
@@ -272,9 +272,11 @@ export const events: ISumanEvents = Object.freeze({
 });
 
 // validate all of the above
-Object.keys(events).forEach(function (k: string) {
+const evs = events as ISumanEvents;
 
-  const e: ISumanEvent = events[k];
+Object.keys(evs).forEach(function (k: string) {
+
+  const e = evs[k];
   const toStr = String(e);
   assert(e.explanation.length > 20, chalk.red(' => Please provide a more detailed explanation for the event (' + k + ').'));
 
