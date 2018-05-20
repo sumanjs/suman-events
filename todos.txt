@@ -1,3 +1,0 @@
-
-
-use enum instead of an duplicate interface?

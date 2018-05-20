@@ -4,6 +4,7 @@
 node_modules
 test
 scripts
+src
 
 ### individual files
 .babelrc
