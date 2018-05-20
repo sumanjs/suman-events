@@ -12,14 +12,13 @@
     "url": "https://github.com/sumanjs/suman-events/issues"
   },
   "dependencies": {
-    "chalk": "^2.3.0",
+    "chalk": "^2.4.1",
     "suman-browser-polyfills": "latest"
   },
   "description": "Shared event names for SumanJS ecosystem",
   "devDependencies": {
-    "@types/chalk": "^0.4.31",
-    "@types/core-js": "^0.9.43",
-    "@types/node": "^7.0.5"
+    "@types/core-js": "^0.9.46",
+    "@types/node": "^10.1.2"
   },
   "gitHead": "0af34b4c376be623790d80b4f3b52795300bba2a",
   "homepage": "https://github.com/sumanjs/suman-events#readme",
@@ -34,7 +33,7 @@
     "ava"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
   "name": "suman-events",
   "optionalDependencies": {},
   "readmeFilename": "README.md",
@@ -45,7 +44,7 @@
   "scripts": {
     "test": "./scripts/test.sh"
   },
-  "types": "index.d.ts",
-  "typings": "index.d.ts",
-  "version": "0.0.119"
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "version": "0.0.120"
 }
