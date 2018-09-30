@@ -17,7 +17,6 @@
   },
   "description": "Shared event names for SumanJS ecosystem",
   "devDependencies": {
-    "@types/core-js": "^0.9.46",
     "@types/node": "^10.1.2"
   },
   "gitHead": "0af34b4c376be623790d80b4f3b52795300bba2a",
